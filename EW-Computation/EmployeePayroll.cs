@@ -13,14 +13,16 @@ namespace EW_Computation
         public const int IS_FULL_TIME = 2;
         public const int EMP_RATE_PER_HOUR = 20;
         public const int NUM_OF_WORKING_DAYS = 2;
+        public const int MAX_HRS_IN_MONTH = 10;
 
-        public static void MonthlyWage_EmpWage()
+        public static void WorkingDays_EmpWage()
         {
             //variables
-            int empHrs = 0, empWage = 0, totalEmpWage = 0;
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
             //Computation
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
+                totalWorkingDays++;
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
@@ -35,10 +37,10 @@ namespace EW_Computation
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * EMP_RATE_PER_HOUR;
-                totalEmpWage += empWage;
-                Console.WriteLine("Emp wage : " + empWage);
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Day#:" +totalWorkingDays + "Emp Hrs : " + empHrs);
             }
+            int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Total Emp Wage :" + totalEmpWage);
         }
     }
