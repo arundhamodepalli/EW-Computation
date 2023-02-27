@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             // Console.WriteLine("welcome employee wage computation");
-            EmployeePayroll.Parttime_EmpWage();
+            EmployeePayroll.Calculatecase_EmpWage();
         }
     }
 }
