@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             // Console.WriteLine("welcome employee wage computation");
-            EmployeePayroll.WorkingDays_EmpWage();
+            EmployeePayroll.Compute_EmpWage();
         }
     }
 }

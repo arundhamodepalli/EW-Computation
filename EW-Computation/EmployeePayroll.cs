@@ -15,7 +15,7 @@ namespace EW_Computation
         public const int NUM_OF_WORKING_DAYS = 2;
         public const int MAX_HRS_IN_MONTH = 10;
 
-        public static void WorkingDays_EmpWage()
+        public static int Compute_EmpWage()
         {
             //variables
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
@@ -38,10 +38,15 @@ namespace EW_Computation
                         break;
                 }
                 totalEmpHrs += empHrs;
-                Console.WriteLine("Day#:" +totalWorkingDays + "Emp Hrs : " + empHrs);
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Total Emp Wage :" + totalEmpWage);
+            return totalEmpWage;
+        }
+        static void  main(string[] args)
+        {
+            Compute_EmpWage();
         }
     }
 }
